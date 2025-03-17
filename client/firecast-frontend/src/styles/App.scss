@@ -1,0 +1,113 @@
+/*
+  Josh Comeau's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body,
+body[data-theme="dark"] {
+  --color-text-primary: var(--color-white);
+  --color-bg-primary: var(--background-dark-mode);
+  --color-element-primary: var(--element-dark-mode);
+  --gray: var(--gray-light);
+}
+
+body[data-theme="light"] {
+  --color-text-primary: var(--text-light-mode);
+  --color-bg-primary: var(--background-light-mode);
+  --color-element-primary: var(--color-white);
+}
+
+body {
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  transition: background 0.25s ease-in-out;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  place-items: start; /* Tailwind has an inline rule for center placement that looks bad */
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+#root {
+  margin: 0 auto;
+  height: max-content;
+}
+
+.slider {
+  -webkit-appearance: none; /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 25px; /* Specified height */
+  background: hsla(0, 0%, 45%, 1); /* Gray background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
+  transition: opacity 0.2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: hsl(0, 0%, 98%);
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: hsl(0, 0%, 98%);
+  cursor: pointer; /* Cursor on hover */
+}
